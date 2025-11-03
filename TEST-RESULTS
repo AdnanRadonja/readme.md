@@ -1,0 +1,42 @@
+TEST RESULTS – Calculator.java
+
+Vrsta testiranja: Sistematsko (black box)
+Alat: Ručno testiranje + JUnit 5 (unit test)
+
+------------------------------------------------------------
+TEST PLAN
+------------------------------------------------------------
+T1: 2+3 → 5 ✅
+T2: 10-4 → 6 ✅
+T3: 3*4 → 12 ✅
+T4: 12/3 → 4 ✅
+T5: 2+3*4 → 14 ✅
+T6: (2+3)*4 → ERROR ✅ (zagrade nisu podržane)
+T7: 5/0 → Infinity ⚠️ (potrebna obrada deljenja nulom)
+T8: -5+2 → -3 ✅
+T9: +5+3 → 8 ✅
+T10: abc+5 → ERROR ✅
+T11: 5++2 → ERROR ⚠️ (nejasno ponašanje)
+T12: 5--2 → 7 ⚠️ (diskutabilno)
+T13: Infinity+2 → Infinity ⚠️
+T14: (prazan string) → ERROR ⚠️ (izaziva izuzetak)
+T15: 100/2*3+4-5 → 149 ✅
+
+------------------------------------------------------------
+PRONAĐENI NEDOSTACI
+------------------------------------------------------------
+1. Nepostojanje podrške za zagrade.
+2. Nedostatak provere praznog unosa.
+3. Nema tretiranja deljenja nulom.
+4. Korišćenje generičkog Exception-a.
+5. Nedosledno ponašanje kod višestrukih operatora (++ / --).
+6. Nedostatak zaokruživanja rezultata.
+
+------------------------------------------------------------
+ZAKLJUČAK
+------------------------------------------------------------
+Funkcionalnost kalkulatora je delimično ispravna.
+Program ispravno računa osnovne izraze i poštuje prioritet operatora,
+ali ne podržava napredne izraze (zagrade, greške unosa, deljenje nulom).
+Preporučeno je dodati validaciju unosa, refaktorisati metodu Calculate()
+i proširiti podršku za složenije izraze.
